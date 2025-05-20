@@ -5,3 +5,4 @@ sudo snort -A console -q -c /etc/snort/snort.conf -i eth0
 sudo /usr/sbin/snort -A console -i enp0s3 -c /etc/snort/snort.conf
 
 sudo snort -T -i enp0s3 -c /etc/snort/snort.conf
+sudo hping3 -S -p 80 --flood 10.0.2.15
