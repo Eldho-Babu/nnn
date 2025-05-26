@@ -17,4 +17,13 @@ var RULE_PATH /etc/snort/rules
 output alert_fast: stdout
 
 include $RULE_PATH/local.rules
+# Define network variables
+ipvar HOME_NET 10.0.2.15
+ipvar EXTERNAL_NET any
+
+# Path to your rules
+var RULE_PATH /etc/snort/rules
+
+# Include local rules file
+include $RULE_PATH/local.rules
 
