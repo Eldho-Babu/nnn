@@ -10,11 +10,13 @@ sudo hping3 -S -p 80 --flood 10.0.2.15
 sudo tcpdump -i any -nn -s 0 -l port 80 or port 443 | sudo tee /var/log/http_https_traffic.log > /dev/null &
 
 
-var HOME_NET any
-var EXTERNAL_NET any
+Define network variables
+ipvar HOME_NET 10.0.2.15
+ipvar EXTERNAL_NET any
+
+Path to your rules
 var RULE_PATH /etc/snort/rules
 
-output alert_fast: stdout
-
+Include local rules file
 include $RULE_PATH/local.rules
 
