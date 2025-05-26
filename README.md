@@ -27,3 +27,18 @@ var RULE_PATH /etc/snort/rules
 # Include local rules file
 include $RULE_PATH/local.rules
 
+
+rule SuspiciousHackTool
+{
+    meta:
+        author = "YourName"
+        description = "Detects files containing suspicious keyword HACK_TOOL"
+        severity = "medium"
+
+    strings:
+        $hack_tool = "HACK_TOOL"
+
+    condition:
+        $hack_tool
+}
+
